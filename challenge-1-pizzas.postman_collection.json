@@ -1,0 +1,65 @@
+{
+  "info": {
+    "name": "Pizza Restaurant API",
+    "_postman_id": "pizza-api-challenge",
+    "description": "API tests for Pizza Restaurant",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Restaurants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/restaurants"
+      }
+    },
+    {
+      "name": "Get Restaurant by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/restaurants/1"
+      }
+    },
+    {
+      "name": "Delete Restaurant",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{base_url}}/restaurants/1"
+      }
+    },
+    {
+      "name": "Get All Pizzas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/pizzas"
+      }
+    },
+    {
+      "name": "Create RestaurantPizza",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"price\": 5, \"pizza_id\": 1, \"restaurant_id\": 1}"
+        },
+        "url": "{{base_url}}/restaurant_pizzas"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000"
+    }
+  ]
+}
