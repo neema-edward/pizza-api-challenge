@@ -1,0 +1,19 @@
+from server.app import db
+from server.models.restaurant_pizza import RestaurantPizza
+
+class Pizza(db.Model):
+    __tablename__ = 'pizzas'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), nullable=False)
+    ingredients = db.Column(db.String(255) nullable=False)
+
+    restaurant_pizza = db.relationship('RestaurantPizza', back_populates='pizza')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'ingredients': self.ingredients
+        }
+
